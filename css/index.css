@@ -1,17 +1,18 @@
 #top{
     height: 0;
 }
+.content *:not(#slide-1){
+    position: relative;
+    z-index: 2;
+}
 #slide-1{
     --progress: clamp(0, var(--scroll-progress), 1);
     --double-speed-progress: clamp(0, var(--progress) * 2, 1);
     display: grid;
     grid-template-rows: repeat(2, calc(45vh - var(--grid-size)));
-    grid-template-columns: 1fr 1fr;
-
-    padding-top: var(--grid-size);
-    padding-bottom: var(--grid-size);
-    padding-left: calc(var(--grid-size) * 2);
-    padding-right: calc(rem(100%, var(--grid-size)) + var(--grid-size));
+    grid-template-columns: 0.4fr 1fr 1fr 0.4fr;
+    grid-template-rows: 0.4fr 1fr 1fr 0.4fr;
+    height: 90vh;
 
     opacity: calc(max(0, 1 - 1.1 * var(--progress)));
 
@@ -21,27 +22,29 @@
     backdrop-filter: blur(3px);
 }
 #slide-1 .name-wrapper{
-    position: relative;
+    grid-area: 2/2/3/3;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
 }
 #slide-1 h1{
-    margin: 0;
-    position: absolute;
-    bottom:0;
     margin-left: 10px;
 }
 #slide-1 p.desc{
+    
+    grid-area: 3/2/4/3;
     margin: 0;
     margin-left: 10px;
     max-width: 40vw;
 }
 #slide-1 .selfie{
-    grid-area: 1 / 2 / -1 / -2;
+    grid-area: 2/3/4/4;
     text-align: center;
     overflow: hidden;
     
     background: url("/img/pfp.jpg") no-repeat;
     background-size: contain;
-    background-position: center center;
+    background-position: right center;
 
     border-radius: 1vh;
 }
@@ -52,19 +55,31 @@
     z-index: 2;
     --progress: clamp(0, var(--scroll-progress) - 1 , 1);
     transform: scale(calc(1 - 0.8 * var(--progress)));
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .years-container{
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    grid-template-rows: min-content 1fr;
-    column-gap: 3vw;
+    flex-grow: 1;
 
-    margin-left: 5vw;
-    margin-right: 5vw;
+    display: flex;
+
+    margin-left: 4vw;
+    margin-right: 4vw;
     justify-content: space-evenly;
-    height: 90vh;
-    overflow:visible;
-
+}
+@media screen and (max-width: 600px) {
+    #slide-2{
+        height: unset!important;
+    }
+    .years-container{
+        flex-grow: unset;
+        flex-direction: column;
+    }
+    .years-card{
+        flex: 1 !important;
+    }
 }
 .year-card{
     border: 1px solid #888;
@@ -74,7 +89,17 @@
     background: #fff;
     transform: scale(0.95);
     transition: 0.1s ease-in;
-    margin: 0;
+
+    flex: 1;
+    margin: 2vw;
+}
+.year-card.star{
+    flex-grow: 1.5;
+    flex-shrink: 0;
+}
+.year-card.star a{
+    font-weight: 500;
+    text-decoration: underline;
 }
 .year-card:hover, .year-card.star{
     border: 1px solid #000;
@@ -96,7 +121,6 @@
 }
 .year-card li{
     margin-bottom: 1em;
-    cursor: pointer;
 }
 .year-card h2{
     margin: 0;
@@ -110,27 +134,30 @@
 }
 #slide-3 h1{
     text-align: center;
-    width: 100%;
+    width: max-content;
+    margin: auto;
 }
 .projects{
     margin: auto;
-    width: 75vw;
+    width: 90vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .projects div{
     border: 1px solid #000;
     background: #fff;
-    max-width: 30vw;
+    width: 30vw;
+    min-width: 350px;
     display: inline-block;
     padding: 1vw;
     border-radius: 1vh;
-    margin: 1vw;
+    margin: 1vw 0;
 }
-.projects div h3{
+.projects div h2{
     margin-top: 0;
+    font-size: 1.2em;
 }
 #slide-3 a{
     text-align: center;
