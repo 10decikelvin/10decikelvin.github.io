@@ -32,7 +32,8 @@ body, html{
     --grid-size: 15vh;
     width: 100%;
 }
-.content::after{
+.content::before{
+    filter: blur(0.4vh);
     z-index: -2;
     content:"";
     width: 100%;
@@ -43,8 +44,8 @@ body, html{
 
     background-size: var(--grid-size) var(--grid-size);
     background-image:
-      linear-gradient(to right, #000 1px, transparent 1px),
-      linear-gradient(to bottom, #000 1px, transparent 1px);
+      linear-gradient(to right, #000 0.2vh, transparent 0.2vh),
+      linear-gradient(to bottom, #000 0.2vh, transparent 0.2vh);
     background-attachment: fixed;
     background-position: 0 10vh;
     

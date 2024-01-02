@@ -7,19 +7,17 @@
 }
 #slide-1{
     --progress: clamp(0, var(--scroll-progress), 1);
-    --double-speed-progress: clamp(0, var(--progress) * 2, 1);
     display: grid;
     grid-template-rows: repeat(2, calc(45vh - var(--grid-size)));
     grid-template-columns: 0.4fr 1fr 1fr 0.4fr;
     grid-template-rows: 0.4fr 1fr 1fr 0.4fr;
     height: 90vh;
+    width: 100%;
 
-    opacity: calc(max(0, 1 - 1.1 * var(--progress)));
+    opacity: calc(max(0, 1 - 1.2 * var(--progress)));
 
     position: fixed;
     z-index: 1;
-
-    backdrop-filter: blur(3px);
 }
 #slide-1 .name-wrapper{
     grid-area: 2/2/3/3;
@@ -40,91 +38,78 @@
 #slide-1 .selfie{
     grid-area: 2/3/4/4;
     text-align: center;
-    overflow: hidden;
     
     background: url("/img/pfp.jpg") no-repeat;
     background-size: contain;
     background-position: right center;
-
-    border-radius: 1vh;
 }
 
 
 #slide-2{
     position: relative;
     z-index: 2;
-    --progress: clamp(0, var(--scroll-progress) - 1 , 1);
-    transform: scale(calc(1 - 0.8 * var(--progress)));
-    height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: stretch;
 }
-.years-container{
-    flex-grow: 1;
-
+#slide-2 h1{
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    height: 5vh;
+    line-height: 5vh;
+}
+#slide-2 .horizontal-wrapper{
     display: flex;
-
-    margin-left: 4vw;
-    margin-right: 4vw;
-    justify-content: space-evenly;
+    flex-direction: row;
+    margin: 0 5vw;
 }
-@media screen and (max-width: 600px) {
-    #slide-2{
-        height: unset!important;
-    }
-    .years-container{
-        flex-grow: unset;
-        flex-direction: column;
-    }
-    .years-card{
-        flex: 1 !important;
-    }
-}
-.year-card{
-    border: 1px solid #888;
-    color: #888;
-    padding: 1vw;
-    border-radius: 1vh;
-    background: #fff;
-    transform: scale(0.95);
-    transition: 0.1s ease-in;
-
+#slide-2 .horizontal-wrapper > *{
     flex: 1;
-    margin: 2vw;
 }
-.year-card.star{
-    flex-grow: 1.5;
-    flex-shrink: 0;
-}
-.year-card.star a{
-    font-weight: 500;
-    text-decoration: underline;
-}
-.year-card:hover, .year-card.star{
-    border: 1px solid #000;
-    color: #000;
-    transition: 0.1s ease-in;
-    transform: scale(1.05);
-}
-.years-container:has(.year-card:not(.star):hover) .year-card.star{
-    transform: scale(0.95);
-    color: #888;
-    border: 1px solid #888;
-    transition: 0.1s ease-in;
-}
-.year-card ul {
+#slide-2 .achievement-list ul {
     list-style-type: none;
-    margin: 0;
-    text-align: center;
-    padding: 0;
+    margin: 2vw;
+    margin-top: 0;
+    padding: 2vw;
+    border-left: 1px solid grey;
 }
-.year-card li{
+#slide-2 .achievement-list li{
     margin-bottom: 1em;
 }
-.year-card h2{
+#slide-2 .achievement-list h2{
     margin: 0;
+}
+#slide-2 .achievement-list a{
+    font-weight: 550;
+}
+#slide-2 a::after{
+    display: none;
+}
+
+#slide-2 .preview-content{
+    position: sticky;
+    top: 25vh;
+    margin-bottom: 25vh;
+    width: 100%;
+    min-height: 200px;
+    height: max-content;
+    border: 1px solid black;
+    background: #fff;
+    border-radius: 1vh;
+    padding: 2vw;
+
+    /**TODO: ADD ACTUAL CONTENT!!*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    #slide-2 .preview-container{
+        display: none;
+    }
 }
 
 /* Argh pesky variable height container*/
