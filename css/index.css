@@ -44,6 +44,26 @@
     background-position: right center;
 }
 
+@media screen and (max-width: 600px) {
+    #slide-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    #slide-1 .selfie{
+        height: 100px;
+        flex: 1;
+        width: 100%;
+        background-position: center;
+    }
+    #slide-1 * {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5vh;
+    }
+}
+
 
 #slide-2{
     position: relative;
@@ -83,9 +103,6 @@
 #slide-2 .achievement-list a{
     font-weight: 550;
 }
-#slide-2 a::after{
-    display: none;
-}
 
 #slide-2 .preview-content{
     position: sticky;
@@ -108,6 +125,11 @@
 
 @media screen and (max-width: 600px) {
     #slide-2 .preview-container{
+        display: none;
+    }
+}
+@media screen and (min-width: 600px) {
+    #slide-2 a::after{
         display: none;
     }
 }
@@ -136,18 +158,23 @@
     width: 30vw;
     min-width: 350px;
     display: inline-block;
-    padding: 1vw;
+    padding: 2vw;
     border-radius: 1vh;
-    margin: 1vw 0;
+    margin: 2vw 0;
 }
 .projects div h2{
     margin-top: 0;
     font-size: 1.2em;
 }
-#slide-3 a{
+#slide-3 a.seemore{
     text-align: center;
     width: 100%;
     display: block;
     cursor: pointer;
     padding: 5vh 0;
+}
+@media screen and (max-width: 600px) {
+    #slide-3 .projects div{
+        margin: 5vh 10vw;
+    }
 }
