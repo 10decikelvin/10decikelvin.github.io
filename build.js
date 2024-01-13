@@ -10,7 +10,7 @@ const list = require("recursive-readdir");
 let data = JSON.parse(readFileSync("src/data.json", "utf-8"))
 
 let SRC_DIR = "src";
-let OUT_DIR = "out";
+let OUT_DIR = "docs";
 
 /**
  * @type {Map<string, string | Buffer>}
