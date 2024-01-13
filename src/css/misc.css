@@ -22,7 +22,6 @@ body, html{
     font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
 :root{
-    --scroll-pos: 0px;
     --scroll-progress: 0;
 }
 .content{

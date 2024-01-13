@@ -1,12 +1,20 @@
 #top{
     height: 0;
 }
-.content *:not(#slide-1){
+.content > *:not(#slide-1){
     position: relative;
     z-index: 2;
 }
+:root{
+    --scroll-progress-1: 0;
+    --scroll-progress-2: 0;
+    --scroll-progress-3: 0;
+}
+/*override: blur less as progress 3 increases*/
+.content::before{
+    filter: blur(calc(0.6vh * clamp(0.2,1 - 0.5 * var(--scroll-progress-2) - var(--scroll-progress-3), 1)));
+}
 #slide-1{
-    --progress: clamp(0, var(--scroll-progress), 1);
     display: grid;
     grid-template-rows: repeat(2, calc(45vh - var(--grid-size)));
     grid-template-columns: 0.4fr 1fr 1fr 0.4fr;
@@ -14,7 +22,7 @@
     height: 90vh;
     width: 100%;
 
-    opacity: calc(max(0, 1 - 1.2 * var(--progress)));
+    opacity: calc(max(0, 1 - 1.2 * var(--scroll-progress-1)));
 
     position: fixed;
     z-index: 1;
@@ -78,11 +86,12 @@
     margin-top: 5vh;
     height: 5vh;
     line-height: 5vh;
+    position: sticky;
 }
 #slide-2 .horizontal-wrapper{
     display: flex;
     flex-direction: row;
-    margin: 0 5vw;
+    padding: 3vw;
 }
 #slide-2 .horizontal-wrapper > *{
     flex: 1;
@@ -114,7 +123,6 @@
     border: 1px solid black;
     background: #fff;
     border-radius: 1vh;
-    padding: 2vw;
 
     /**TODO: ADD ACTUAL CONTENT!!*/
     display: flex;
