@@ -2,23 +2,23 @@
     let projects = [
         {
             "title": "International Student Science Fair",
-            "href": "/html/placeholder.html",
+            "href": "placeholder",
             "description": "Led a team of 25 students to help organise cultural events, opening ceremony and social media in the ISSF2023",
             "tags": ["leadership", "stem-education"]
         },
         {
             "title": "Aharmonic magnetic oscillators",
-            "href": "/html/placeholder.html",
+            "href": "placeholder",
             "description": "Studying the relation between amplitude and period for a system of two neodymium magnets.",
             "tags": ["physics", "EM", "opencv"]
         },{
             "title": "Project Odyssey",
-            "href": "/html/placeholder.html",
+            "href": "placeholder",
             "description": "Programmed and built a self-driving robot car with teammates at Project Odyssey, winning the Droid Racing Competition 2023!",
             "tags": ["ai", "machine-vision", "hardware-engineering"]
         },{
             "title": "QR-Vote",
-            "href": "/html/placeholder.html",
+            "href": "placeholder",
             "description": "Scan a QR code to vote for an artwork! Website built for my school's art showcase in 2021.",
             "tags": ["webdev", "nodejs"]
         }
@@ -89,6 +89,6 @@
                 </span>
             </div>
         {/each}
-        <a href="/html/placeholder.html" class="seemore">See more projects</a>
+        <a href="/placeholder" class="seemore">See more projects</a>
     </div>
 </div>

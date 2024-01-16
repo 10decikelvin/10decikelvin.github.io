@@ -10,7 +10,10 @@ export default {
 			precompress: false,
 			strict: true,
 			
-		})
+		}),
+		prerender: {
+			handleMissingId: "warn"
+		}
 	},
 	preprocess: preprocess({})
 };

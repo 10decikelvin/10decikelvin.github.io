@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../_app/immutable/assets/0.-5LDUPI6.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.H0qMzcqk.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/entry.anTHujUF.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.kAlY8CUs.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.GtD9gSTK.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.SLqtFaR1.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0._8iQjaZY.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/3.kRceyHf5.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
+		<script>
+			let div = document.createElement("div");
+			let div2 = document.createElement("div2");
+			document.addEventListener("DOMContentLoaded", () => {
+				div.appendChild(div2);
+				document.body.appendChild(div);
+				div.classList.add("invisible-container");
+				div2.classList.add("invisible-sizer");
+			})
+
+			function getVh(vh){
+				return div2.clientHeight / 100 * vh;
+			}
+			function getVw(vw){
+				return div2.clientWidth / 100 * vw;
+			}
+			let heights = [1,1,1];
+			window.addEventListener("load", () => {
+				heights = ["#slide-1", "#slide-2", "#slide-3"].map(s => document.querySelector(s)?.clientHeight || 0);
+				console.log(heights);
+			})
+
+			let lastPos = 0;
+			function scale(pos, topPos, height){
+				return Math.max(0, Math.min(1, (pos - topPos) / height))
+			}
+			function loop(){
+				let pos =  document.documentElement.scrollTop;
+				if(pos != lastPos){
+					lastPos = pos;
+					document.documentElement.style.setProperty('--scroll-progress', `${pos / getVh(90)}`)
+					document.documentElement.style.setProperty('--scroll-progress-1', `${scale(pos, 0, heights[0])}`)
+					document.documentElement.style.setProperty('--scroll-progress-2', `${scale(pos, heights[0], heights[1])}`)
+					document.documentElement.style.setProperty('--scroll-progress-3', `${scale(pos, heights[0] + heights[1], heights[2])}`)
+
+				}
+				requestAnimationFrame(loop);
+			}
+			loop();
+		</script>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">    <nav class="svelte-18zwpa5" data-svelte-h="svelte-10zadxt"><a href="/" class="menu svelte-18zwpa5"><div class="svelte-18zwpa5">❄</div></a> <a href="./placeholder" class="svelte-18zwpa5"><div class="hover-underline svelte-18zwpa5">Who</div></a> <a href="./placeholder" class="svelte-18zwpa5"><div class="hover-underline svelte-18zwpa5">What</div></a> <a href="./placeholder" class="svelte-18zwpa5"><div class="hover-underline svelte-18zwpa5">Why</div></a></nav> <div class="content svelte-18zwpa5">Placeholder <footer class="svelte-18zwpa5" data-svelte-h="svelte-4hzmw7"><h1 class="svelte-18zwpa5">You&#39;ve reached the end! (for now)</h1> <div class="svelte-18zwpa5">Wanna talk? Contact me <a href="mailto:10decikelvin@gmail.com" class="svelte-18zwpa5">via my email</a></div></footer></div> 
+			
+			<script>
+				{
+					__sveltekit_1vrmxci = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.H0qMzcqk.js"),
+						import("../_app/immutable/entry/app.GtD9gSTK.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
