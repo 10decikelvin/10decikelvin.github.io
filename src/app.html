@@ -8,12 +8,7 @@
 		<script>
 			let div = document.createElement("div");
 			let div2 = document.createElement("div2");
-			document.addEventListener("DOMContentLoaded", () => {
-				div.appendChild(div2);
-				document.body.appendChild(div);
-				div.classList.add("invisible-container");
-				div2.classList.add("invisible-sizer");
-			})
+			
 
 			function getVh(vh){
 				return div2.clientHeight / 100 * vh;
@@ -21,29 +16,17 @@
 			function getVw(vw){
 				return div2.clientWidth / 100 * vw;
 			}
-			let heights = [1,1,1];
-			window.addEventListener("load", () => {
-				heights = ["#slide-1", "#slide-2", "#slide-3"].map(s => document.querySelector(s)?.clientHeight || 0);
-				console.log(heights);
-			})
-
-			let lastPos = 0;
-			function scale(pos, topPos, height){
-				return Math.max(0, Math.min(1, (pos - topPos) / height))
-			}
-			function loop(){
-				let pos =  document.documentElement.scrollTop;
-				if(pos != lastPos){
-					lastPos = pos;
-					document.documentElement.style.setProperty('--scroll-progress', `${pos / getVh(90)}`)
-					document.documentElement.style.setProperty('--scroll-progress-1', `${scale(pos, 0, heights[0])}`)
-					document.documentElement.style.setProperty('--scroll-progress-2', `${scale(pos, heights[0], heights[1])}`)
-					document.documentElement.style.setProperty('--scroll-progress-3', `${scale(pos, heights[0] + heights[1], heights[2])}`)
-
+			function setHeight(){
+				for(let id of ["slide-1", "slide-2", "slide-3"]){
+					let h = document.getElementById(id)?.clientHeight || getVh(90);
+					document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
 				}
-				requestAnimationFrame(loop);
 			}
-			loop();
+			window.addEventListener("load", setHeight);
+			window.addEventListener("resize", setHeight);
+			setHeight();
+			setInterval(setHeight, 2000);
+
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">

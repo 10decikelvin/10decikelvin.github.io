@@ -1,4 +1,6 @@
 <script>
+    import Grid from "../Grid.svelte";
+
     let projects = [
         {
             "title": "International Student Science Fair",
@@ -28,13 +30,14 @@
     
 /* Argh pesky variable height container*/
 #slide-3{
-    z-index: 2;
-    position: relative;
+    position: sticky;
+    top: calc(100vh - var(--slide-3-height))
 }
 #slide-3 h1{
     text-align: center;
     width: max-content;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 .projects{
     margin: auto;
@@ -72,23 +75,25 @@
 }
 </style>
 <div id="slide-3">
-    <h1>Projects</h1>
-    <div class="projects">
-        {#each projects as {title, href, description, tags}}
-            <div>
-                <h2>
-                    <a href="{href}">{title}</a>
-                </h2>
-                <p>
-                    {description}
-                </p>
-                <span>
-                    {#each tags as tag}
-                    <i>#{tag}</i>
-                    {/each}
-                </span>
-            </div>
-        {/each}
-        <a href="/placeholder" class="seemore">See more projects</a>
-    </div>
+    <Grid>
+        <h1>Projects</h1>
+        <div class="projects">
+            {#each projects as {title, href, description, tags}}
+                <div>
+                    <h2>
+                        <a href="{href}">{title}</a>
+                    </h2>
+                    <p>
+                        {description}
+                    </p>
+                    <span>
+                        {#each tags as tag}
+                        <i>#{tag}</i>
+                        {/each}
+                    </span>
+                </div>
+            {/each}
+            <a href="/placeholder" class="seemore">See more projects</a>
+        </div>
+    </Grid>
 </div>

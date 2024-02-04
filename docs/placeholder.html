@@ -5,24 +5,20 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="./_app/immutable/assets/0.-5LDUPI6.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/4.xUAH2ZVK.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.TE2Zj5WV.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/entry.CHqpJaTE.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.kAlY8CUs.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.DspT__6e.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.SLqtFaR1.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0._8iQjaZY.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/4.h-tZmN5S.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
+		<link href="./_app/immutable/assets/0.N6inqrE2.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/Grid.0bssx7zF.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/10.xUAH2ZVK.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.pnYHdKoS.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/entry.f7nlGHM9.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.zMJaRgub.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.o0QO9IiL.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.R2o7NE1x.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.p6DEvYa-.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/10.WcoSsb-I.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
 		<script>
 			let div = document.createElement("div");
 			let div2 = document.createElement("div2");
-			document.addEventListener("DOMContentLoaded", () => {
-				div.appendChild(div2);
-				document.body.appendChild(div);
-				div.classList.add("invisible-container");
-				div2.classList.add("invisible-sizer");
-			})
+			
 
 			function getVh(vh){
 				return div2.clientHeight / 100 * vh;
@@ -30,37 +26,25 @@
 			function getVw(vw){
 				return div2.clientWidth / 100 * vw;
 			}
-			let heights = [1,1,1];
-			window.addEventListener("load", () => {
-				heights = ["#slide-1", "#slide-2", "#slide-3"].map(s => document.querySelector(s)?.clientHeight || 0);
-				console.log(heights);
-			})
-
-			let lastPos = 0;
-			function scale(pos, topPos, height){
-				return Math.max(0, Math.min(1, (pos - topPos) / height))
-			}
-			function loop(){
-				let pos =  document.documentElement.scrollTop;
-				if(pos != lastPos){
-					lastPos = pos;
-					document.documentElement.style.setProperty('--scroll-progress', `${pos / getVh(90)}`)
-					document.documentElement.style.setProperty('--scroll-progress-1', `${scale(pos, 0, heights[0])}`)
-					document.documentElement.style.setProperty('--scroll-progress-2', `${scale(pos, heights[0], heights[1])}`)
-					document.documentElement.style.setProperty('--scroll-progress-3', `${scale(pos, heights[0] + heights[1], heights[2])}`)
-
+			function setHeight(){
+				for(let id of ["slide-1", "slide-2", "slide-3"]){
+					let h = document.getElementById(id)?.clientHeight || getVh(90);
+					document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
 				}
-				requestAnimationFrame(loop);
 			}
-			loop();
+			window.addEventListener("load", setHeight);
+			window.addEventListener("resize", setHeight);
+			setHeight();
+			setInterval(setHeight, 2000);
+
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">    <nav class="svelte-18zwpa5" data-svelte-h="svelte-10zadxt"><a href="/" class="menu svelte-18zwpa5"><div class="svelte-18zwpa5">❄</div></a> <a href="./placeholder" class="svelte-18zwpa5"><div class="hover-underline svelte-18zwpa5">Who</div></a> <a href="./placeholder" class="svelte-18zwpa5"><div class="hover-underline svelte-18zwpa5">What</div></a> <a href="./placeholder" class="svelte-18zwpa5"><div class="hover-underline svelte-18zwpa5">Why</div></a></nav> <div class="content svelte-18zwpa5"><div class="screen svelte-1w656a3" data-svelte-h="svelte-1lhb67h"><h1>Under construction ...</h1> <p>Don&#39;t worry, Kelvin is hard at work to make this page available. <br> <a href="/">Go back home for now?</a></p></div> <footer class="svelte-18zwpa5" data-svelte-h="svelte-4hzmw7"><h1 class="svelte-18zwpa5">You&#39;ve reached the end! (for now)</h1> <div class="svelte-18zwpa5">Wanna talk? Contact me <a href="mailto:10decikelvin@gmail.com" class="svelte-18zwpa5">via my email</a></div></footer></div> 
+		<div style="display: contents">    <nav class="svelte-ijl4dp" data-svelte-h="svelte-34dsmo"><a href="/" class="menu svelte-ijl4dp"><div class="svelte-ijl4dp">❄</div></a> <a href="/done" class="svelte-ijl4dp"><div class="hover-underline svelte-ijl4dp">done</div></a> <a href="/doing" class="svelte-ijl4dp"><div class="hover-underline svelte-ijl4dp">doing</div></a> <a href="/placeholder" class="svelte-ijl4dp"><div class="hover-underline svelte-ijl4dp">will do</div></a></nav> <div class="content svelte-ijl4dp"><div class="screen svelte-1w656a3" data-svelte-h="svelte-1lhb67h"><h1>Under construction ...</h1> <p>Don&#39;t worry, Kelvin is hard at work to make this page available. <br> <a href="/">Go back home for now?</a></p></div> <footer class="svelte-ijl4dp" data-svelte-h="svelte-4hzmw7"><h1 class="svelte-ijl4dp">You&#39;ve reached the end! (for now)</h1> <div class="svelte-ijl4dp">Wanna talk? Contact me <a href="mailto:10decikelvin@gmail.com" class="svelte-ijl4dp">via my email</a></div></footer></div> 
 			
 			<script>
 				{
-					__sveltekit_16lzedx = {
+					__sveltekit_1og1l13 = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
@@ -69,11 +53,11 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.TE2Zj5WV.js"),
-						import("./_app/immutable/entry/app.DspT__6e.js")
+						import("./_app/immutable/entry/start.pnYHdKoS.js"),
+						import("./_app/immutable/entry/app.o0QO9IiL.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
-							node_ids: [0, 4],
+							node_ids: [0, 10],
 							data,
 							form: null,
 							error: null

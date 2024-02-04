@@ -1,3 +1,7 @@
+<script>
+    import Grid from "../components/Grid.svelte";
+
+</script>
 <svelte:head>
     <title>Kelvin Chan</title>
     <!-- Include in every page -->
@@ -18,27 +22,7 @@ Specific to this component
 .content{
     padding-top: 10vh;
     position: absolute;
-    background: rgba(255, 255, 255, 0.85);
-    --grid-size: 15vh;
-    width: 100%;
-}
-.content::before{
-    filter: blur(0.4vh);
-    z-index: -2;
-    content:"";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top:0;
-    left: 0;
-
-    background-size: var(--grid-size) var(--grid-size);
-    background-image:
-      linear-gradient(to right, #000 0.2vh, transparent 0.2vh),
-      linear-gradient(to bottom, #000 0.2vh, transparent 0.2vh);
-    background-attachment: fixed;
-    background-position: 0 10vh;
-    
+    width: 100vw;
 }
 nav{
     position: fixed;
@@ -104,9 +88,17 @@ nav a.menu:hover{
 }
 /*Footer*/
 footer{
+    position: sticky;
+    top: 10vh;
+    z-index: 3;
+    height: 90vh;
     border-top: 1px solid #000;
     background: #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 footer a{
@@ -171,9 +163,9 @@ footer div{
 </style>
 <nav>
     <a href="/" class="menu"><div>❄</div></a>
-    <a href="./placeholder"><div class="hover-underline">Who</div></a>
-    <a href="./placeholder"><div class="hover-underline">What</div></a>
-    <a href="./placeholder"><div class="hover-underline">Why</div></a>
+    <a href="/done"><div class="hover-underline">done</div></a>
+    <a href="/doing"><div class="hover-underline">doing</div></a>
+    <a href="/placeholder"><div class="hover-underline">will do</div></a>
 </nav>
 <div class="content">
     <slot />

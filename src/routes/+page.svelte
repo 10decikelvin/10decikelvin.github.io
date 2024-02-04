@@ -7,18 +7,13 @@
     import Slide3 from "../components/slides/slide3.svelte";
 </script>
 <style global>
-    .content > *:not(#slide-1){
-        position: relative;
-        z-index: 2;
-    }
     :root{
-        --scroll-progress-1: 0;
-        --scroll-progress-2: 0;
-        --scroll-progress-3: 0;
+        --slide-1-height: 90vh;
+        --slide-2-height: 90vh;
+        --slide-3-height: 90vh;
     }
-    /*override: blur less as progress 3 increases*/
-    .content::before{
-        filter: blur(calc(0.6vh * clamp(0.2,1 - 0.5 * var(--scroll-progress-2) - var(--scroll-progress-3), 1)));
+    .content{
+        scroll-behavior: smooth;
     }
 </style>
 <Slide1></Slide1>
