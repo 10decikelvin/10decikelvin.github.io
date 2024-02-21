@@ -12,5 +12,6 @@
         max-width: 800px;
         margin: auto;
         padding: 10px;
+        min-height: 90vh;
     }
 </style>

@@ -12,7 +12,8 @@ export default {
 			
 		}),
 		prerender: {
-			handleMissingId: "warn"
+			handleMissingId: "warn",
+			handleHttpError: "warn"
 		}
 	},
 	preprocess: preprocess({})

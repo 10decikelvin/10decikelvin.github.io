@@ -4,9 +4,14 @@
     let projects = [
         {
             "title": "International Student Science Fair",
-            "href": "placeholder",
+            "href": "https://issf2023.com/",
             "description": "Led a team of 25 students to help organise cultural events, opening ceremony and social media in the ISSF2023",
             "tags": ["leadership", "stem-education"]
+        },{
+            "title": "Millimole",
+            "href": "https://github.com/10decikelvin/millimole",
+            "description": "A custom, self-hosted proxy to enhance your anonymity online without being forced to go through (profit-driven) VPN companies.",
+            "tags": ["networking", "nodejs", "http-connect"]
         },
         {
             "title": "Aharmonic magnetic oscillators",
@@ -15,12 +20,12 @@
             "tags": ["physics", "EM", "opencv"]
         },{
             "title": "Project Odyssey",
-            "href": "placeholder",
+            "href": "https://odyssey.woflydev.com/",
             "description": "Programmed and built a self-driving robot car with teammates at Project Odyssey, winning the Droid Racing Competition 2023!",
             "tags": ["ai", "machine-vision", "hardware-engineering"]
         },{
             "title": "QR-Vote",
-            "href": "placeholder",
+            "href": "https://replit.com/@aoc010101/QR-Code",
             "description": "Scan a QR code to vote for an artwork! Website built for my school's art showcase in 2021.",
             "tags": ["webdev", "nodejs"]
         }
@@ -46,6 +51,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-bottom: 20vh;
 }
 .projects div{
     border: 1px solid #000;

@@ -22,8 +22,8 @@
 
         background-size: 18vh 18vh;
         background-image:
-        linear-gradient(to right, #ccc 2px, transparent 2px),
-        linear-gradient(to bottom, #ccc 2px, #fff 2px);
+        linear-gradient(to right, #eee 0.2vw, transparent 0.5vw),
+        linear-gradient(to bottom, #eee 0.2vw, #fff 0.5vw);
         background-attachment: fixed;
         background-position: 0 10vh;
     }
@@ -31,7 +31,7 @@
         width: 100%;
         height: 100%;
         position: relative;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(0.5vw);
         border-top: 1px solid black;
     }
 </style>

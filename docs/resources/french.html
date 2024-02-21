@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="../favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<link href="../_app/immutable/assets/0.JwSRTE_D.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/11._tUddJqN.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/GenericPage.Ww25MkmT.css" rel="stylesheet">
+		<link href="../_app/immutable/assets/Grid.Hm26IFk2.css" rel="stylesheet">
+		<link rel="modulepreload" href="../_app/immutable/entry/start.sKODw5vz.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/scheduler.50shW1w6.js">
+		<link rel="modulepreload" href="../_app/immutable/entry/app.X7N0sxRM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/index.HJRhwQZU.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/0.mWzttb40.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/each.VdP25gJ4.js">
+		<link rel="modulepreload" href="../_app/immutable/nodes/11.BC4ytnEB.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/GenericPage.8jz8B1tM.js">
+		<link rel="modulepreload" href="../_app/immutable/chunks/Grid.l-bmQf7Y.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
+		<script>
+			let div = document.createElement("div");
+			let div2 = document.createElement("div2");
+			
+
+			function getVh(vh){
+				return div2.clientHeight / 100 * vh;
+			}
+			function getVw(vw){
+				return div2.clientWidth / 100 * vw;
+			}
+			function setHeight(){
+				for(let id of ["slide-1", "slide-2", "slide-3"]){
+					let h = document.getElementById(id)?.clientHeight || getVh(90);
+					document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+				}
+			}
+			window.addEventListener("load", setHeight);
+			window.addEventListener("resize", setHeight);
+			setHeight();
+			setInterval(setHeight, 2000);
+
+		</script>
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">     <nav class="svelte-1qf1awz" data-svelte-h="svelte-dqu69y"><a href="/" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Home</div></a> <a href="/gallery" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Gallery</div></a> <a href="/resources" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Resources</div></a></nav> <div class="content svelte-1qf1awz"><div class="parent svelte-e09uvf"><div class="bg svelte-e09uvf"></div> <div class="wrap svelte-e09uvf"><div class="svelte-1vqrzm7"><h1 data-svelte-h="svelte-fl0l3v">French Anki</h1> <div data-svelte-h="svelte-1hv2df7">The following file contains:
+        <ul><li>1000+ French words with english translations</li> <li>100% audio coverage, generated with AI speech synthesis tech</li> <li>Includes grammatical genders for all nouns</li> <li>3 anki quiz modes (french text to english text, french audio to english text and english text to french text)</li></ul>
+        I&#39;ve tried to make the translations as accurate as possible, but please feel free to <a href="mailto:10decikelvin@gmail.com">contact me via email</a> to suggest corrections and improvements.
+        <h2>Link</h2> <a href="/resources/french.apkg" class="download svelte-is5ykz">french.apkg (13.5 MB)</a></div></div></div> </div> </div> <div class="toasts svelte-1qf1awz"></div> 
+			
+			<script>
+				{
+					__sveltekit_1hf85ll = {
+						base: new URL("..", location).pathname.slice(0, -1)
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("../_app/immutable/entry/start.sKODw5vz.js"),
+						import("../_app/immutable/entry/app.X7N0sxRM.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 11],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>

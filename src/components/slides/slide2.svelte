@@ -11,16 +11,16 @@
         width: 100vw;
         position: sticky;
         top: calc(100vh - var(--slide-2-height));
-        height: 150vh;
     }
     .wrapper{
         max-width: 800px;
         margin: auto;
-
+        
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: stretch;;
+        padding-bottom: 20vh;
     }
     h1{
         margin-bottom: 5vh;
@@ -43,14 +43,14 @@
         margin: 0;
     }
     /*Ignore this warning, there are indeed such elements*/
-    .achievement-list a{
+    :global(.achievement-list a){
         font-weight: 550;
     }
 </style>
 <div id="slide-2">
     <Grid>
         <div class="wrapper">
-            <h1>Notable Achievements</h1>
+            <h1>At a glance ...</h1>
             <div class="achievement-list">
                 {#each years as year}
                     <div class="year">

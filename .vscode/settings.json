@@ -1,3 +1,6 @@
 {
-    "liveServer.settings.root": "/docs"
+    "liveServer.settings.root": "/docs",
+    "files.exclude": {
+        "**/docs": true
+    }
 }
