@@ -136,35 +136,11 @@ nav a:hover div::after{
     transition: 0.3s ease-out;
 }
 
-/*Footer*/
-footer{
-    position: sticky;
-    top: 10vh;
-    z-index: 2;
-    height: 90vh;
-    border-top: 1px solid #000;
-    background: #fff;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
 .toasts{
     position: fixed;
     top: 10px;
     right: 10px;
     z-index: 10;
-}
-footer a{
-    color: #000;
-}
-footer h1{
-    margin-top: 10vh;
-    margin-bottom: 0;
-}
-footer div{
-    padding: 10vh 0;
 }
 
 .toasts > button{
@@ -234,13 +210,6 @@ footer div{
 </nav>
 <div class="content">
     <slot />
-    
-    <!--<footer>
-        <h1>That's it! (for now)</h1>
-        <div>
-            Wanna talk? Contact me <a href="mailto:10decikelvin@gmail.com">via my email</a>
-        </div>
-    </footer>-->
 </div>
 <div class="toasts">
 {#each toasts as {msg, id} (id)}

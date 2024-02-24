@@ -24,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"fft.js": "^4.0.4",
 		"svelte-french-toast": "^1.2.0"
 	}
 }

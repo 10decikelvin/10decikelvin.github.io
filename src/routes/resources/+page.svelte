@@ -8,7 +8,7 @@
         },
         {
             title: "French DELF B1/2 Vocab (with audio!)",
-            description: "1000+ somewhat commonly used french vocab that I manually compiled from reading comprehension activites, podcasts etc. Includes gender information for nouns and also audio files, in the form of an Anki deck.",
+            description: "1000+ somewhat commonly used french vocab that I compiled from doing reading comprehension activites, listening to podcasts etc. Includes audio files for french pronounciations. Available as an Anki deck.",
             href: "/resources/french"
         }
     ]

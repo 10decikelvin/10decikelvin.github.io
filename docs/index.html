@@ -5,17 +5,17 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="./_app/immutable/assets/0.JwSRTE_D.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/3.FOFnjz8X.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/Grid.Hm26IFk2.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.sKODw5vz.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.50shW1w6.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.X7N0sxRM.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.HJRhwQZU.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.mWzttb40.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.VdP25gJ4.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/3.IeyQ5PbR.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Grid.l-bmQf7Y.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
+		<link href="./_app/immutable/assets/0.bG7bMHxu.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/3.jjIk_DsH.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/Grid.Hrnw_0yw.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.PAeIBjhG.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.XnKXn3FP.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.gaMEhNHe.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.H4UM-geN.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.tzEv8f6l.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.sgeXRGd4.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/3.i6Befu5L.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Grid.r-mfmysb.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
 		<script>
 			let div = document.createElement("div");
 			let div2 = document.createElement("div2");
@@ -27,25 +27,29 @@
 			function getVw(vw){
 				return div2.clientWidth / 100 * vw;
 			}
+			let previousHeights = {};
 			function setHeight(){
 				for(let id of ["slide-1", "slide-2", "slide-3"]){
 					let h = document.getElementById(id)?.clientHeight || getVh(90);
-					document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+					if(previousHeights[id] !== h){
+						previousHeights[id] = h;
+						document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+					}
 				}
 			}
 			window.addEventListener("load", setHeight);
 			window.addEventListener("resize", setHeight);
 			setHeight();
-			setInterval(setHeight, 2000);
+			setInterval(setHeight, 1000);
 
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">     <nav class="svelte-1qf1awz" data-svelte-h="svelte-dqu69y"><a href="/" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Home</div></a> <a href="/gallery" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Gallery</div></a> <a href="/resources" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Resources</div></a></nav> <div class="content svelte-1qf1awz"><div id="slide-1" class="svelte-8x5xrx"><div class="parent svelte-e09uvf"><div class="bg svelte-e09uvf"></div> <div class="wrap svelte-e09uvf"><div class="wrapper svelte-8x5xrx" data-svelte-h="svelte-djy11m"><div class="name-wrapper svelte-8x5xrx"><h1 class="svelte-8x5xrx">Kelvin Chan</h1></div> <div class="selfie svelte-8x5xrx"></div> <p class="desc svelte-8x5xrx">An avid STEM highschooler aiming to solve global problems.<br class="svelte-8x5xrx"> <span style="font-size: 1em; margin-top: 2em; display: inline-block" class="blink svelte-8x5xrx">Keep scrolling ⬇</span></p></div></div> </div></div> <div id="slide-2" class="svelte-dksjhb"><div class="parent svelte-e09uvf"><div class="bg svelte-e09uvf"></div> <div class="wrap svelte-e09uvf"><div class="wrapper svelte-dksjhb"><h1 class="svelte-dksjhb" data-svelte-h="svelte-1osi31y">At a glance ...</h1> <div class="achievement-list svelte-dksjhb"><div class="year"><h2 class="svelte-dksjhb">2023</h2> <ul class="svelte-dksjhb"><li class="svelte-dksjhb"><!-- HTML_TAG_START -->Silver medal at the <a href="/achievements/ipho">International Physics Olympiad</a><!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/apho">No.1 in Australia</a> for the Asian Physics Olympiad<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/hons">Top 5 students</a> in school cohort<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/drc">No.1</a> against all Australian uni robotics teams @DRC2023<!-- HTML_TAG_END --> </li></ul> </div><div class="year"><h2 class="svelte-dksjhb">2022</h2> <ul class="svelte-dksjhb"><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/icq">Top scorer</a> in the Internation Chemistry Quiz<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/debate">School Senior A Debating Team</a><!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START -->Represented QASMT at <a href="/achievements/jssf">an international science fair</a><!-- HTML_TAG_END --> </li></ul> </div><div class="year"><h2 class="svelte-dksjhb">2021</h2> <ul class="svelte-dksjhb"><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/ijso">Silver medal</a> in the International Junior Science Olympiads<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START -->7.0 GPA Honours Student<!-- HTML_TAG_END --> </li></ul> </div></div></div></div> </div></div> <div id="slide-3" class="svelte-bq8mms"><div class="parent svelte-e09uvf"><div class="bg svelte-e09uvf"></div> <div class="wrap svelte-e09uvf"><h1 class="svelte-bq8mms" data-svelte-h="svelte-136d6se">Projects</h1> <div class="projects svelte-bq8mms"><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://issf2023.com/">International Student Science Fair</a></h2> <p>Led a team of 25 students to help organise cultural events, opening ceremony and social media in the ISSF2023</p> <span><i>#leadership</i><i>#stem-education</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://github.com/10decikelvin/millimole">Millimole</a></h2> <p>A custom, self-hosted proxy to enhance your anonymity online without being forced to go through (profit-driven) VPN companies.</p> <span><i>#networking</i><i>#nodejs</i><i>#http-connect</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="placeholder">Aharmonic magnetic oscillators</a></h2> <p>Studying the relation between amplitude and period for a system of two neodymium magnets.</p> <span><i>#physics</i><i>#EM</i><i>#opencv</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://odyssey.woflydev.com/">Project Odyssey</a></h2> <p>Programmed and built a self-driving robot car with teammates at Project Odyssey, winning the Droid Racing Competition 2023!</p> <span><i>#ai</i><i>#machine-vision</i><i>#hardware-engineering</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://replit.com/@aoc010101/QR-Code">QR-Vote</a></h2> <p>Scan a QR code to vote for an artwork! Website built for my school's art showcase in 2021.</p> <span><i>#webdev</i><i>#nodejs</i></span> </div> <a href="/placeholder" class="seemore svelte-bq8mms" data-svelte-h="svelte-158k3dp">See more projects</a></div></div> </div></div> </div> <div class="toasts svelte-1qf1awz"></div> 
+		<div style="display: contents">     <nav class="svelte-w5f9u8" data-svelte-h="svelte-dqu69y"><a href="/" class="svelte-w5f9u8"><div class="hover-underline svelte-w5f9u8">Home</div></a> <a href="/gallery" class="svelte-w5f9u8"><div class="hover-underline svelte-w5f9u8">Gallery</div></a> <a href="/resources" class="svelte-w5f9u8"><div class="hover-underline svelte-w5f9u8">Resources</div></a></nav> <div class="content svelte-w5f9u8"><div id="slide-1" class="svelte-8x5xrx"><div class="parent svelte-1io2ck"><div class="bg svelte-1io2ck"></div> <div class="wrap svelte-1io2ck"><div class="wrapper svelte-8x5xrx" data-svelte-h="svelte-djy11m"><div class="name-wrapper svelte-8x5xrx"><h1 class="svelte-8x5xrx">Kelvin Chan</h1></div> <div class="selfie svelte-8x5xrx"></div> <p class="desc svelte-8x5xrx">An avid STEM highschooler aiming to solve global problems.<br class="svelte-8x5xrx"> <span style="font-size: 1em; margin-top: 2em; display: inline-block" class="blink svelte-8x5xrx">Keep scrolling ⬇</span></p></div></div> </div></div> <div id="slide-2" class="svelte-dksjhb"><div class="parent svelte-1io2ck"><div class="bg svelte-1io2ck"></div> <div class="wrap svelte-1io2ck"><div class="wrapper svelte-dksjhb"><h1 class="svelte-dksjhb" data-svelte-h="svelte-1osi31y">At a glance ...</h1> <div class="achievement-list svelte-dksjhb"><div class="year"><h2 class="svelte-dksjhb">2023</h2> <ul class="svelte-dksjhb"><li class="svelte-dksjhb"><!-- HTML_TAG_START -->Silver medal at the <a href="/achievements/ipho">International Physics Olympiad</a><!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/apho">No.1 in Australia</a> for the Asian Physics Olympiad<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/hons">Top 5 students</a> in school cohort<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/drc">No.1</a> against all Australian uni robotics teams @DRC2023<!-- HTML_TAG_END --> </li></ul> </div><div class="year"><h2 class="svelte-dksjhb">2022</h2> <ul class="svelte-dksjhb"><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/icq">Top scorer</a> in the Internation Chemistry Quiz<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/debate">School Senior A Debating Team</a><!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START -->Represented QASMT at <a href="/achievements/jssf">an international science fair</a><!-- HTML_TAG_END --> </li></ul> </div><div class="year"><h2 class="svelte-dksjhb">2021</h2> <ul class="svelte-dksjhb"><li class="svelte-dksjhb"><!-- HTML_TAG_START --><a href="/achievements/ijso">Silver medal</a> in the International Junior Science Olympiads<!-- HTML_TAG_END --> </li><li class="svelte-dksjhb"><!-- HTML_TAG_START -->7.0 GPA Honours Student<!-- HTML_TAG_END --> </li></ul> </div></div></div></div> </div></div> <div id="slide-3" class="svelte-bq8mms"><div class="parent svelte-1io2ck"><div class="bg svelte-1io2ck"></div> <div class="wrap svelte-1io2ck"><h1 class="svelte-bq8mms" data-svelte-h="svelte-136d6se">Projects</h1> <div class="projects svelte-bq8mms"><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://issf2023.com/">International Student Science Fair</a></h2> <p>Led a team of 25 students to help organise cultural events, opening ceremony and social media in the ISSF2023</p> <span><i>#leadership</i><i>#stem-education</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://github.com/10decikelvin/millimole">Millimole</a></h2> <p>A custom, self-hosted proxy to enhance your anonymity online without being forced to go through (profit-driven) VPN companies.</p> <span><i>#networking</i><i>#nodejs</i><i>#http-connect</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="placeholder">Aharmonic magnetic oscillators</a></h2> <p>Studying the relation between amplitude and period for a system of two neodymium magnets.</p> <span><i>#physics</i><i>#EM</i><i>#opencv</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://odyssey.woflydev.com/">Project Odyssey</a></h2> <p>Programmed and built a self-driving robot car with teammates at Project Odyssey, winning the Droid Racing Competition 2023!</p> <span><i>#ai</i><i>#machine-vision</i><i>#hardware-engineering</i></span> </div><div class="svelte-bq8mms"><h2 class="svelte-bq8mms"><a href="https://replit.com/@aoc010101/QR-Code">QR-Vote</a></h2> <p>Scan a QR code to vote for an artwork! Website built for my school's art showcase in 2021.</p> <span><i>#webdev</i><i>#nodejs</i></span> </div> <a href="/placeholder" class="seemore svelte-bq8mms" data-svelte-h="svelte-158k3dp">See more projects</a></div></div> </div></div> <footer data-svelte-h="svelte-1gny8gg"><h1>That&#39;s it! (for now)</h1> <div>Wanna talk? Contact me <a href="mailto:10decikelvin@gmail.com">via my email</a></div></footer></div> <div class="toasts svelte-w5f9u8"></div> 
 			
 			<script>
 				{
-					__sveltekit_1hf85ll = {
+					__sveltekit_c91el2 = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
@@ -54,8 +58,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.sKODw5vz.js"),
-						import("./_app/immutable/entry/app.X7N0sxRM.js")
+						import("./_app/immutable/entry/start.PAeIBjhG.js"),
+						import("./_app/immutable/entry/app.gaMEhNHe.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],

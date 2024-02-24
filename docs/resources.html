@@ -5,18 +5,18 @@
 		<link rel="icon" href="./favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
-		<link href="./_app/immutable/assets/0.JwSRTE_D.css" rel="stylesheet">
+		<link href="./_app/immutable/assets/0.bG7bMHxu.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/GenericPage.Ww25MkmT.css" rel="stylesheet">
-		<link href="./_app/immutable/assets/Grid.Hm26IFk2.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.sKODw5vz.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.50shW1w6.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.X7N0sxRM.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/index.HJRhwQZU.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.mWzttb40.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/each.VdP25gJ4.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/9.WUps1iHo.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/GenericPage.8jz8B1tM.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/Grid.l-bmQf7Y.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
+		<link href="./_app/immutable/assets/Grid.Hrnw_0yw.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.PAeIBjhG.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.XnKXn3FP.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.gaMEhNHe.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.H4UM-geN.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.tzEv8f6l.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/each.sgeXRGd4.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/9.TjIRdCUO.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/GenericPage.T4Wyjsbh.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/Grid.r-mfmysb.js"><title>Kelvin Chan</title><!-- HEAD_svelte-99fol3_START --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"><!-- HEAD_svelte-99fol3_END -->
 		<script>
 			let div = document.createElement("div");
 			let div2 = document.createElement("div2");
@@ -28,25 +28,29 @@
 			function getVw(vw){
 				return div2.clientWidth / 100 * vw;
 			}
+			let previousHeights = {};
 			function setHeight(){
 				for(let id of ["slide-1", "slide-2", "slide-3"]){
 					let h = document.getElementById(id)?.clientHeight || getVh(90);
-					document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+					if(previousHeights[id] !== h){
+						previousHeights[id] = h;
+						document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+					}
 				}
 			}
 			window.addEventListener("load", setHeight);
 			window.addEventListener("resize", setHeight);
 			setHeight();
-			setInterval(setHeight, 2000);
+			setInterval(setHeight, 1000);
 
 		</script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
-		<div style="display: contents">     <nav class="svelte-1qf1awz" data-svelte-h="svelte-dqu69y"><a href="/" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Home</div></a> <a href="/gallery" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Gallery</div></a> <a href="/resources" class="svelte-1qf1awz"><div class="hover-underline svelte-1qf1awz">Resources</div></a></nav> <div class="content svelte-1qf1awz"><div class="parent svelte-e09uvf"><div class="bg svelte-e09uvf"></div> <div class="wrap svelte-e09uvf"><div class="svelte-1vqrzm7"><h1 data-svelte-h="svelte-1k1ah73">Useful resources</h1> <p data-svelte-h="svelte-1a9zsi">As a student, I accumulate useful resources as I&#39;m studying / coding / doing whatever and would love to share this with other people who might need it. Some resources are locked behind AES-GCM encryption for privacy reasons, and I promise it&#39;s properly secured so please only access stuff you are given access to.</p> <div class="resources"><div><h2><a href="/resources/encrypt">AES-GCM encryptor</a></h2> <p>A browser-based file encryptor that encrypts and decrypts your files in line with the security standards set up by NIST. Use this as a much more secure alternative to 'passworded' zip files for data security.</p> </div><div><h2><a href="/resources/french">French DELF B1/2 Vocab (with audio!)</a></h2> <p>1000+ somewhat commonly used french vocab that I manually compiled from reading comprehension activites, podcasts etc. Includes gender information for nouns and also audio files, in the form of an Anki deck.</p> </div></div></div></div> </div> </div> <div class="toasts svelte-1qf1awz"></div> 
+		<div style="display: contents">     <nav class="svelte-w5f9u8" data-svelte-h="svelte-dqu69y"><a href="/" class="svelte-w5f9u8"><div class="hover-underline svelte-w5f9u8">Home</div></a> <a href="/gallery" class="svelte-w5f9u8"><div class="hover-underline svelte-w5f9u8">Gallery</div></a> <a href="/resources" class="svelte-w5f9u8"><div class="hover-underline svelte-w5f9u8">Resources</div></a></nav> <div class="content svelte-w5f9u8"><div class="parent svelte-1io2ck"><div class="bg svelte-1io2ck"></div> <div class="wrap svelte-1io2ck"><div class="svelte-1vqrzm7"><h1 data-svelte-h="svelte-1k1ah73">Useful resources</h1> <p data-svelte-h="svelte-1a9zsi">As a student, I accumulate useful resources as I&#39;m studying / coding / doing whatever and would love to share this with other people who might need it. Some resources are locked behind AES-GCM encryption for privacy reasons, and I promise it&#39;s properly secured so please only access stuff you are given access to.</p> <div class="resources"><div><h2><a href="/resources/encrypt">AES-GCM encryptor</a></h2> <p>A browser-based file encryptor that encrypts and decrypts your files in line with the security standards set up by NIST. Use this as a much more secure alternative to 'passworded' zip files for data security.</p> </div><div><h2><a href="/resources/french">French DELF B1/2 Vocab (with audio!)</a></h2> <p>1000+ somewhat commonly used french vocab that I compiled from doing reading comprehension activites, listening to podcasts etc. Includes audio files for french pronounciations. Available as an Anki deck.</p> </div></div></div></div> </div></div> <div class="toasts svelte-w5f9u8"></div> 
 			
 			<script>
 				{
-					__sveltekit_1hf85ll = {
+					__sveltekit_c91el2 = {
 						base: new URL(".", location).pathname.slice(0, -1)
 					};
 
@@ -55,8 +59,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.sKODw5vz.js"),
-						import("./_app/immutable/entry/app.X7N0sxRM.js")
+						import("./_app/immutable/entry/start.PAeIBjhG.js"),
+						import("./_app/immutable/entry/app.gaMEhNHe.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 9],

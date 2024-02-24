@@ -16,16 +16,20 @@
 			function getVw(vw){
 				return div2.clientWidth / 100 * vw;
 			}
+			let previousHeights = {};
 			function setHeight(){
 				for(let id of ["slide-1", "slide-2", "slide-3"]){
 					let h = document.getElementById(id)?.clientHeight || getVh(90);
-					document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+					if(previousHeights[id] !== h){
+						previousHeights[id] = h;
+						document.documentElement.style.setProperty("--"+id+"-height", `${h}px`)
+					}
 				}
 			}
 			window.addEventListener("load", setHeight);
 			window.addEventListener("resize", setHeight);
 			setHeight();
-			setInterval(setHeight, 2000);
+			setInterval(setHeight, 1000);
 
 		</script>
 	</head>
